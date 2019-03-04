@@ -2,6 +2,8 @@ This Docker image runs a Spotify Connect server that will appear in the Device L
 
 This image requires the host to have a functional ALSA device, accessible by the root user.
 
+The Spotify binary in this image is compiled from here: https://github.com/Spotifyd/spotifyd
+
 Installation
 ============
 ```bash
