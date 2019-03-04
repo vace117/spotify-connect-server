@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/spotify
+cd /root
 
 DEVICE_NAME=${DEVICE_NAME:-"Dockerized-Spotify-Device"}
 
