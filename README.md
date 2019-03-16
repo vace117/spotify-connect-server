@@ -7,7 +7,9 @@ The Spotify binary in this image is compiled from here: https://github.com/Spoti
 Installation
 ============
 ```bash
-git clone https://github.com/vace117/spotify-connect-server.git
+wget https://raw.githubusercontent.com/vace117/spotify-connect-server/master/control_scripts/start-spotify-connect-server.sh; chmod +x start-spotify-connect-server.sh
+
+wget https://raw.githubusercontent.com/vace117/spotify-connect-server/master/control_scripts/stop-spotify-connect-server.sh; chmod +x stop-spotify-connect-server.sh
 ```
 
 Start Spotify Connect Server
@@ -15,7 +17,9 @@ Start Spotify Connect Server
 ```bash
 cd spotify-connect-server.git/control_scripts/
 
-./start-spotify-connect-server.sh [--device-name|-d <Desired_Spotify_Device_Name_No_Spaces>] [--backend|-b <alsa|pulseaudio>]
+./start-spotify-connect-server.sh \
+    [--device-name|-d <Desired_Spotify_Device_Name_No_Spaces>] \
+    [--backend|-b <alsa|pulseaudio>]
 ```
 
 `--device-name` is optional. If you do not specify it, the default is:   `"Dockerized-Spotify-Device"`.
