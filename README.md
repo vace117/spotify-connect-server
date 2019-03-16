@@ -1,6 +1,6 @@
-This Docker image runs a Spotify Connect server that will appear in the Device List of any Spotify client device connected to the same network. This allows the client to play music through the local sound device of the host where this image is installed. 
+This Docker image runs a Spotify Connect server that will appear in the Device List of any Spotify client connected to the same network. This allows the client to play music through the local sound device of the host where this image is installed. 
 
-This image requires the host to have functional ALSA or PulseAudio.
+This image requires a Linux host with functional ALSA or PulseAudio sound backend.
 
 The Spotify binary in this image is compiled from here: https://github.com/Spotifyd/spotifyd
 
@@ -15,8 +15,6 @@ wget https://raw.githubusercontent.com/vace117/spotify-connect-server/master/con
 Start Spotify Connect Server
 =========
 ```bash
-cd spotify-connect-server.git/control_scripts/
-
 ./start-spotify-connect-server.sh \
     [--device-name|-d <Desired_Spotify_Device_Name_No_Spaces>] \
     [--backend|-b <alsa|pulseaudio>]
@@ -29,7 +27,5 @@ cd spotify-connect-server.git/control_scripts/
 Stop Spotify Connect Server
 =========
 ```bash
-cd spotify-connect-server.git/control_scripts/
-
 ./stop-spotify-connect-server.sh
 ```
