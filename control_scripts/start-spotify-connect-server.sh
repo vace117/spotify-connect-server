@@ -73,4 +73,21 @@ else
 fi
 
 docker pull vace117/spotify-connect-server
-docker run $DOCKER_ENV_VARS $DOCKER_PARAMS --net host vace117/spotify-connect-server
+
+# spotifyd is a bit buggy - it exits with Exit Code 0 when one client disconnects, and another connects
+#
+# This loop is here to restart the server in case of these crashes
+#
+while [ true ]; do
+  docker run $DOCKER_ENV_VARS $DOCKER_PARAMS --net host vace117/spotify-connect-server
+
+  EXIT_CODE=$?
+
+  if [ "$EXIT_CODE" -eq "0" ]; then
+    echo "CRASH DETECTED! Restarting...";
+  else
+    echo "Normal Exit Requested."
+    break
+  fi
+
+done
